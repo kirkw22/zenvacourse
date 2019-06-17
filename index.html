@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Vue Practice </title>
+        <script src='https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js'></script>
+    </head>
+
+    <body>
+        <div id="firstDiv">
+            <p>number is: {{ number }}</p>
+            <ul>
+                <li v-for='number_ in numbers'>
+                    {{ number_ }}
+                </li>
+            </ul>
+        </div>
+
+        <div id="secondDiv">
+                <p v-if='isDoorOpen'>Come in!</p>
+                <p v-else-if='!isDoorOpen'>Stay out!</p>
+                
+            </div>
+
+        <script>
+            var firstVue = new Vue({
+                el: '#firstDiv',
+                data:{
+                    number: 1,
+                    numbers: [1,2,3],
+                }
+            })
+
+            var secondVue = new Vue({
+                el: '#secondDiv',
+                data:{
+                    isDoorOpen: false
+                }
+            })
+            
+        </script>
+    </body>
+</html>
